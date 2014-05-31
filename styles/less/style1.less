@@ -1,0 +1,154 @@
+html, body {
+  height: 100%;
+}
+
+@hover-col: #3679B2;
+@grey-col: #282828;
+@green-col: #70AC35;
+
+.mixin-dial-up {
+  height: 75px;
+  width: 89px;
+  border-radius: 3px;
+  display: inline-block;
+  //  margin-left: 8px;
+  margin-left: 10px;
+
+}
+
+
+.container {
+  height: 100%;
+  width: 520px;
+  margin: auto;
+  background-color: #000000;
+
+}
+
+.keypad-ui{
+  height: 89%;
+  width: 520px;
+  margin: auto;
+
+}
+.menu-bar {
+  width: 100%;
+  height: 11%;
+
+}
+
+.tab {
+  width: 19.3%;
+  height: 100%;
+  background-color: #263041;
+  color: #9A9EA4;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  //  vertical-align: center;
+}
+
+.tab-image {
+  padding-top: 15px;
+  width: 50px;
+  height: 31px;
+}
+
+.tab-name {
+  padding-top: 5px;
+}
+
+.display {
+  width: 100%;
+  height: 18%;
+  border-top: 3px solid @hover-col;
+}
+
+.matching-contacts {
+  background-color: @grey-col;
+  width: 100%;
+  height: 13%;
+  border-top: 2px solid @hover-col;
+  border-bottom: 2px solid @hover-col;
+}
+
+.keypad {
+  width: 100%;
+  height: 69%;
+  background-color: @grey-col;
+
+}
+
+.dial-numbers {
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  padding-top: 13px;
+
+  .key {
+    width: 140px;
+    height: 70px;
+    background-color: lighten(@grey-col, 20%);
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+    .number {
+      color: lighten(@grey-col, 90%);
+      font-size: 54px;
+      padding-left: 15px
+    }
+    .letters {
+      color: lighten(@grey-col, 50%);
+      font-size: 24px;
+      height: 30px;
+      width: 60px;
+      padding-left: 12px;
+      //      padding-bottom: 10px;
+
+    }
+  }
+
+}
+
+.inline-pr {
+  display: inline-block;
+}
+
+.dial-ups {
+  height: 80%;
+  width: 90%;
+  margin: auto;
+  margin-top: -35px;
+  .dial {
+    display: inline-block;
+    background-color: @green-col;
+    height: 75px;
+    width: 140px;
+    border-radius: 3px;
+    margin-left: 10px;
+
+  }
+  .dial-p {
+    .mixin-dial-up;
+    background-color: @green-col;
+  }
+
+  .message {
+    .mixin-dial-up;
+    background-color: #FFCC00;
+  }
+  .delete {
+    .mixin-dial-up;
+    background-color: lighten(@grey-col, 20%);
+  }
+
+}
+
+.contacts-ui{
+  visibility: hidden;
+  height: 30px;
+  widows: 40px;
+  background-color: red ;
+}
+

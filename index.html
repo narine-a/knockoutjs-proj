@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet/less" type="text/css"
+          href="styles/less/style.less"/>
+    <script src="styles/libs/less.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="menu-bar" data-bind="foreach: tabs">
+        <div class="tab" data-bind="click: $parent.changeTab, css: $parent.currentTab().id === id ? 'selected' : '' ">
+            <img class="tab-image" data-bind="attr:{src: img}">
+            <div class="tab-name" data-bind="text: name"></div>
+        </div>
+    </div>
+    <div class=keypad-ui data-bind="visible: currentTab().id === 0">
+        <div class="display" data-bind="text: currentNumber"></div>
+        <div class="matching-contacts-screen">
+            <div class="matching-contacts" data-bind="text: firstMatchContact().name"></div>
+            <div class="matching-contacts-number"
+                 data-bind="text: matchContacts().length, click: showOrHide "></div>
+        </div>
+        <div class="keypad">
+            <div class="dial-numbers" data-bind="foreach: key, visible: hideC ">
+                <div class="key" data-bind="click: $parent.pushNumber">
+                    <div class="number inline-pr" data-bind="text: number"></div>
+                    <div class="letters inline-pr" data-bind="text: letters"></div>
+                </div>
+            </div>
+            <div class="dial-ups " data-bind="visible: hideC">
+                <div class="dial"></div>
+                <div class="dial-p"></div>
+                <div class="message"></div>
+                <div class="delete" data-bind="click: removeNumber"></div>
+            </div>
+            <div class="matched-contacts" data-bind="visible: showC, foreach : matchContacts">
+                <div class="contact">
+                    <div class="contact-name" data-bind="text: name"></div>
+                    <div class="contact-number" data-bind="text: number"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts-ui" data-bind="visible: currentTab().id === 2">
+        <div class="contacts-list" data-bind="foreach : contacts">
+            <div class="contact" data-bind="click: $parent.markedContact, css: $parent.markedItem().name === name ? 'selected-contact' : '' ">
+                <div class="contact-name" data-bind="text: name"></div>
+                <div class="contact-number" data-bind="text: number"></div>
+            </div>
+        </div>
+        <div class="edit-contacts" data-bind="foreach : buttons, click: edit">
+            <div class="button"  data-bind="text: name"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--<img width="16px" height="16px" class="tab-image" data-bind="attr:{src: img}" src="styles/img/logs.png">-->
+<script type='text/javascript' src='styles/libs/knockout-3.1.0.js'></script>
+<script type='text/javascript' src='styles/js/koJs.js'></script>
+
+</body>
+</html>
