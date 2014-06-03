@@ -24,6 +24,11 @@ function viewModel() {
         {number: '#', letters: '&'}
     ]);
 
+    this.currentTab = ko.observable(this.tabs()[0]);
+    this.changeTab = function (tab) {
+        self.currentTab(tab);
+    }
+
     this.contacts = ko.observableArray([
         {name: "Narine", number: 37493592909 },
         {name: "John", number: 18185487025},
@@ -43,15 +48,9 @@ function viewModel() {
 
     this.buttons = ko.observableArray([
         {name: 'Create'},
-        {name: 'Edit'},
-        {name: 'Delete'}
+        { name: 'Edit'},
+        { name: 'Delete'}
     ]);
-
-    this.currentTab = ko.observable(this.tabs()[2]);
-
-    this.changeTab = function (tab) {
-        self.currentTab(tab);
-    }
 
     this.currentNumber = ko.observable('');
 
@@ -92,16 +91,16 @@ function viewModel() {
         }
     }
 
-    this.markedItem = ko.observable('');
+    this.markedItem = ko.observable({});
 
     this.markedContact = function(markedC){
         self.markedItem(markedC);
+        self.contacts().remove(self.contacts());
     }
 
     this.edit = function(choosedButton){
-//        debugger;
-        if(choosedButton.name == 'Delete'){
-           self.contacts.remove(self.markedItem);
+        if(choosedButton.name === 'Delete'){
+            self.contacts.remove(self.markedItem());
         }
     }
 }

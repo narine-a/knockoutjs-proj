@@ -1,7 +1,3 @@
-//html, body {
-//  height: 100%;
-//}
-
 @hover-col: #3679B2;
 @grey-col: #282828;
 @green-col: #70AC35;
@@ -11,7 +7,6 @@
   width: 89px;
   border-radius: 3px;
   display: inline-block;
-  //  margin-left: 8px;
   margin-left: 10px;
 }
 
@@ -41,7 +36,6 @@
   display: inline-block;
   font-size: 16px;
   text-align: center;
-  //  vertical-align: center;
   :hover {
     cursor: pointer;
   }
@@ -80,8 +74,6 @@
     border-right: 2px solid @hover-col;
     color: white;
     font-size: 25px;
-    //    padding-left: 20px;
-    //    padding-top: 10px;
   }
   .matching-contacts-number {
     width: 19%;
@@ -110,7 +102,6 @@
   height: 80%;
   margin: auto;
   padding-top: 13px;
-
   .key {
     cursor: pointer;
     width: 140px;
@@ -131,7 +122,6 @@
       height: 30px;
       width: 60px;
       padding-left: 12px;
-      //      padding-bottom: 10px;
     }
   }
 }
@@ -153,12 +143,10 @@
     border-radius: 3px;
     margin-left: 10px;
   }
-
   .dial-p {
     .mixin-dial-up;
     background-color: @green-col;
   }
-
   .message {
     .mixin-dial-up;
     background-color: #FFCC00;
@@ -167,6 +155,12 @@
     .mixin-dial-up;
     background-color: lighten(@grey-col, 20%);
     cursor: pointer;
+    line-height: 75px ;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 67px;
   }
 }
 
@@ -203,10 +197,6 @@
   background-color: @hover-col;
 }
 
-.selected-contact{
-  background-color: @grey-col;
-}
-
 .matched-contacts {
   .mixin-under-tabs;
   overflow: auto;
@@ -234,4 +224,8 @@
   margin-left: 37px;
   margin-top: 20px;
   font-size: 20px;
+}
+
+.selected-cont{
+  background-color: @grey-col;
 }
